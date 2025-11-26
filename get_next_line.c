@@ -6,7 +6,7 @@
 /*   By: mbotelho <mbotelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 09:06:13 by mbotelho          #+#    #+#             */
-/*   Updated: 2025/11/20 11:47:49 by mbotelho         ###   ########.fr       */
+/*   Updated: 2025/11/26 16:33:52 by mbotelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,13 @@ char	*get_next_line(int fd)
 {
 	static char	*buffer;
 	char		*line;
-	
-	if (fd == -1 || BUFFER_SIZE <= 0) //|| fd >= 1024)
+
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+		return (free(buffer), NULL);
+	buffer = read_file(fd, buffer);
+	if (!buffer)
 		return (NULL);
-	while ()
-	{
-		if ()
-		else
-	}
+	line = new_line(buffer);
+	buffer = clean_buffer(buffer);
+	return (line);
 }

@@ -6,7 +6,7 @@
 /*   By: mbotelho <mbotelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 09:06:16 by mbotelho          #+#    #+#             */
-/*   Updated: 2025/11/20 11:12:24 by mbotelho         ###   ########.fr       */
+/*   Updated: 2025/11/21 21:12:07 by mbotelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,16 @@
 #  define BUFFER_SIZE 42
 # endif
 
-// Functions
+// Main functions
 char	*get_next_line(int fd);
+char	*read_file(int fd, char *buffer);
+char	*new_line(char *buffer);
+char	*clean_buffer(char	*buffer);
+
+// Auxiliary functions
+char	*ft_strdup(const char *s);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strjoin(char const *s1, char const *s2);
+size_t	ft_strlen(const char *str);
 
 #endif
