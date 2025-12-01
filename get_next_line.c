@@ -6,7 +6,7 @@
 /*   By: mbotelho <mbotelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 09:06:13 by mbotelho          #+#    #+#             */
-/*   Updated: 2025/11/26 16:33:52 by mbotelho         ###   ########.fr       */
+/*   Updated: 2025/12/01 19:23:00 by mbotelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,34 @@ char	*get_next_line(int fd)
 {
 	static char	*buffer;
 	char		*line;
+	ssize_t		bytes_read;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
-		return (free(buffer), NULL);
-	buffer = read_file(fd, buffer);
-	if (!buffer)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	line = new_line(buffer);
-	buffer = clean_buffer(buffer);
+	bytes_read = 1;
+	while (!ft_strchr(buffer, '\n') && bytes_read > 0)
+	{
+		bytes_read = read_and_join(fd, &buffer);
+		if (bytes_read < 0)
+		{
+			free(buffer);
+			buffer = NULL;
+			return (NULL);
+		}
+	}
+	line = extract_line(&buffer);
 	return (line);
 }
+
+/*int main(void)
+{
+	int fd = open("test1.txt", O_RDONLY);
+	char *line;
+	while ((line = get_next_line(fd)) != NULL)
+	{
+		printf("%s", line);
+		free(line);
+	}
+	close(fd);
+	return 0;
+}*/
