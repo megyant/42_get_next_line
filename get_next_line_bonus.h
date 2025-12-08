@@ -6,7 +6,7 @@
 /*   By: mbotelho <mbotelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 15:57:24 by mbotelho          #+#    #+#             */
-/*   Updated: 2025/12/04 16:01:20 by mbotelho         ###   ########.fr       */
+/*   Updated: 2025/12/08 16:27:10 by mbotelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 # define GET_NEXT_LINE_BONUS_H
 
 // Libraries
-# include <stdlib.h>
-# include <unistd.h>
 # include <fcntl.h>
 # include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 // buffer standard
 # ifndef BUFFER_SIZE
@@ -26,6 +26,7 @@
 
 // Main functions
 char	*get_next_line(int fd);
+int		fill_buffer(int fd, char *buffer);
 int		ft_isnewline(char *buffer);
 
 // Auxiliary functions

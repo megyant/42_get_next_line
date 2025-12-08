@@ -6,7 +6,7 @@
 /*   By: mbotelho <mbotelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 09:06:13 by mbotelho          #+#    #+#             */
-/*   Updated: 2025/12/04 15:37:02 by mbotelho         ###   ########.fr       */
+/*   Updated: 2025/12/08 16:29:49 by mbotelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,18 @@ char	*get_next_line(int fd)
 {
 	static char	buffer[BUFFER_SIZE + 1];
 	char		*line;
-	int			bytes_read;
+	int			is_newline;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	line = ft_strjoin(0, buffer);
-	if (ft_isnewline(buffer))
-		return (line);
-	bytes_read = read(fd, buffer, BUFFER_SIZE);
-	if (bytes_read < 0)
-		return (free(line), NULL);
-	while (bytes_read)
+	line = NULL;
+	is_newline = 0;
+	while (!is_newline && fill_buffer(fd, buffer))
 	{
 		line = ft_strjoin(line, buffer);
-		if (ft_isnewline(buffer))
-			break ;
-		bytes_read = read(fd, buffer, BUFFER_SIZE);
+		if (!line)
+			return (NULL);
+		is_newline = ft_isnewline(buffer);
 	}
 	return (line);
 }
