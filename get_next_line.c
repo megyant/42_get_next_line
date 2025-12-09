@@ -6,7 +6,7 @@
 /*   By: mbotelho <mbotelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 09:06:13 by mbotelho          #+#    #+#             */
-/*   Updated: 2025/12/08 16:29:49 by mbotelho         ###   ########.fr       */
+/*   Updated: 2025/12/09 11:36:16 by mbotelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ char	*get_next_line(int fd)
 	{
 		line = ft_strjoin(line, buffer);
 		if (!line)
-			return (NULL);
+			return (free(line), NULL);
 		is_newline = ft_isnewline(buffer);
 	}
 	return (line);
 }
 
-/*int main(void)
+int main(void)
 {
 	int fd = open("test1.txt", O_RDONLY);
 	char *line;
@@ -44,4 +44,5 @@ char	*get_next_line(int fd)
 	free(line);
 	close(fd);
 	return 0;
-}*/
+	printf("\n");
+}

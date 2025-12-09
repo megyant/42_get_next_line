@@ -6,7 +6,7 @@
 /*   By: mbotelho <mbotelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 15:57:16 by mbotelho          #+#    #+#             */
-/*   Updated: 2025/12/08 16:27:07 by mbotelho         ###   ########.fr       */
+/*   Updated: 2025/12/09 15:03:42 by mbotelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-/* int	main(void)
+/*int	main(void)
 {
 	int		fd1 = open("test1.txt", O_RDONLY);
 	int		fd2 = open("test2.txt", O_RDONLY);
@@ -73,4 +73,4 @@ char	*get_next_line(int fd)
 	close(fd2);
 	close(fd3);
 	return (0);
-} */
+}*/

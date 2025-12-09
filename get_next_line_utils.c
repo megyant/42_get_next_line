@@ -6,7 +6,7 @@
 /*   By: mbotelho <mbotelho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 09:06:09 by mbotelho          #+#    #+#             */
-/*   Updated: 2025/12/08 16:40:13 by mbotelho         ###   ########.fr       */
+/*   Updated: 2025/12/09 11:24:48 by mbotelho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strjoin(char *s1, char *s2);
 
 int	fill_buffer(int fd, char *buffer)
 {
-	int	bytes_read;
+	int		bytes_read;
 
 	if (buffer[0] != '\0')
 		return (1);
