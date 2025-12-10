@@ -1,4 +1,4 @@
-# 42_getnextline
+# Get_next_line
 
 This project has been created as part of the 42 curriculum.
 
