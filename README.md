@@ -47,3 +47,11 @@ valgrind --leak-check=full --show-leak-kinds=all ./a.out
 - [Static variable wikipedia](https://en.wikipedia.org/wiki/Static_variable)
 - [Static variables geekforgeeks](https://www.geeksforgeeks.org/c/static-variables-in-c/)
 - [Educative read()](https://www.educative.io/answers/read-data-from-a-file-using-read-in-c)
+
+## IMPORTANT MESSAGE
+
+DO NOT COPY OR CHEAT, YOU WILL NOT BE HELPING YOURSELF.
+
+## Completion
+  
+Finished on 10/12 with 125
