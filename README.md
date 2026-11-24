@@ -1,6 +1,6 @@
-# Get_next_line
+*This project has been created as part of the 42 curriculum by mbotelho.*
 
-*This project has been created as part of the 42 curriculum by <mbotelho>mbotelho.*
+# Get_next_line
 
 ## Description
 Get_next_line project aims to develop a program that reads a file descriptor until either a '\n' (new line) or EOF is found.  
